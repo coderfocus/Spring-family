@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class JdbctemplateDemoApplication implements CommandLineRunner {
 
     @Autowired
-    private  BookDao bookDao;
+    private BookDao bookDao;
 
     @Bean
     public SimpleJdbcInsert simpleJdbcInsert(JdbcTemplate jdbcTemplate) {

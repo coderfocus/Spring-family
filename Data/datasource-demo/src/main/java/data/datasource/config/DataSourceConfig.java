@@ -26,7 +26,7 @@ public class DataSourceConfig {
     private Environment env;
 
     @Bean(destroyMethod = "close")
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(env.getProperty("datasource.driverClassName").trim());
         dataSource.setUrl(env.getProperty("datasource.url").trim());

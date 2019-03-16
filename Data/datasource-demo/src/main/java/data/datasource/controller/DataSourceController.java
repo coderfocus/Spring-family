@@ -21,7 +21,7 @@ public class DataSourceController {
     private DataSource dataSource;
 
     @GetMapping("/getDataSource")
-    public String getDataSource(){
+    public String getDataSource() {
         return dataSource.toString();
     }
 

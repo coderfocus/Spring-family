@@ -28,7 +28,7 @@ public class BookDao {
     private JdbcTemplate jdbcTemplate;
 
 
-    public int insertBook(Book book){
+    public int insertBook(Book book) {
         int result = jdbcTemplate.update(
                 "insert into t_book(book_name, author,price) values(?,?,?)",
                 book.getBookName(),
@@ -39,12 +39,12 @@ public class BookDao {
     }
 
 
-    public int deleteBook(long id){
-        int result = jdbcTemplate.update("delete from t_book where id = ?",id);
+    public int deleteBook(long id) {
+        int result = jdbcTemplate.update("delete from t_book where id = ?", id);
         return result;
     }
 
-    public int updateBook(Book book){
+    public int updateBook(Book book) {
         int result = jdbcTemplate.update(
                 "update t_book set book_name=?,author=?,price=? where id=?",
                 book.getBookName(),
@@ -54,10 +54,10 @@ public class BookDao {
         return result;
     }
 
-    public Book getBook(long id){
+    public Book getBook(long id) {
         Book book = jdbcTemplate.queryForObject("select id,book_name,author,price from t_book where id=?",
                 new Object[]{id},
-                new RowMapper<Book>(){
+                new RowMapper<Book>() {
                     @Override
                     public Book mapRow(ResultSet rs, int rowNum) throws SQLException {
                         return Book.builder()
@@ -67,16 +67,16 @@ public class BookDao {
                                 .price(rs.getDouble(4))
                                 .build();
                     }
-        });
+                });
 
-        log.info("Book : {}",book.toString());
+        log.info("Book : {}", book.toString());
 
         return book;
     }
 
 
-    public List<Book> getBooks(){
-        List<Book> books = jdbcTemplate.query("select id,book_name,author,price from t_book",new RowMapper<Book>(){
+    public List<Book> getBooks() {
+        List<Book> books = jdbcTemplate.query("select id,book_name,author,price from t_book", new RowMapper<Book>() {
             @Override
             public Book mapRow(ResultSet rs, int rowNum) throws SQLException {
                 return Book.builder()
@@ -88,17 +88,17 @@ public class BookDao {
             }
         });
 
-        books.forEach(book -> log.info("Book : {}",book.toString()));
+        books.forEach(book -> log.info("Book : {}", book.toString()));
 
         return books;
     }
 
-    public List<Long> getBookids(){
+    public List<Long> getBookids() {
         List<Long> bookids = jdbcTemplate.queryForList("select id from t_book",
                 Long.class
         );
 
-        bookids.forEach(id -> log.info("bookid : {}",id));
+        bookids.forEach(id -> log.info("bookid : {}", id));
 
         return bookids;
     }
