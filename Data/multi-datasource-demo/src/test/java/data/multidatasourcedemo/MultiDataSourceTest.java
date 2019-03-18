@@ -20,7 +20,7 @@ public class MultiDataSourceTest {
     @Resource
     private JdbcTemplate fooJdbcTemplate;
 
-    @Resource
+    @Autowired
     private JdbcTemplate barJdbcTemplate;
 
     @Test
