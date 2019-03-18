@@ -1,13 +1,17 @@
 package data.declarativetransactiondemo;
 
+import com.mysql.cj.jdbc.exceptions.MySQLTimeoutException;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.dao.TransientDataAccessResourceException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.sql.SQLException;
 
 import static org.junit.Assert.*;
 
@@ -30,12 +34,41 @@ public class TestServiceImplTest {
     }
 
     @Test
-    public void insertRecordThenRollback() throws RollbackException{
+    public void insertRecordThenRollback(){
         log.info("before insertRecordThenRollback: {}",jdbcTemplate.queryForObject("select count(*) from test",Long.class));
         try{
             testService.insertRecordThenRollback();
         }catch (RollbackException e){
             log.info("after insertRecordThenRollback: {}",jdbcTemplate.queryForObject("select count(*) from test",Long.class));
+        }
+    }
+
+    @Test
+    public void timeout()  {
+        log.info("before timeout: {}",jdbcTemplate.queryForObject("select count(*) from test",Long.class));
+        try {
+            testService.timeout();
+        }catch (Exception e){
+            log.info("after timeout: {}",jdbcTemplate.queryForObject("select count(*) from test",Long.class));
+        }
+    }
+
+    @Test
+    public void readOnly(){
+        try {
+            testService.readOnly();
+        }catch (Exception e){
+            log.info("Exception: {}",e.toString());
+        }
+    }
+
+    @Test
+    public void rollbackForException(){
+        log.info("before rollbackForException: {}",jdbcTemplate.queryForObject("select count(*) from test",Long.class));
+        try{
+            testService.rollbackForException();
+        }catch (Exception e){
+            log.info("after rollbackForException: {}",jdbcTemplate.queryForObject("select count(*) from test",Long.class));
         }
     }
 }
