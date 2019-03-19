@@ -1,5 +1,6 @@
 package data.declarativetransactiondemo;
 
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.TransientDataAccessResourceException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,6 +21,9 @@ public class TestServiceImpl implements TestService{
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    private TestService testService;
+
     @Override
     @Transactional
     public void insertRecord() {
@@ -31,11 +35,6 @@ public class TestServiceImpl implements TestService{
     public void insertRecordThenRollback() throws RollbackException {
         jdbcTemplate.update("insert into test (name) values ('foo')");
         throw new RollbackException();
-    }
-
-    @Override
-    public void invokeInsertThenRollback() throws RollbackException {
-        insertRecordThenRollback();
     }
 
     @Transactional(timeout = 5)
@@ -56,4 +55,22 @@ public class TestServiceImpl implements TestService{
         jdbcTemplate.update("insert into test (name) values ('foo')");
         throw new Exception();
     }
+
+    @Override
+    @Transactional(rollbackFor = RollbackException.class)
+    public void a() throws RollbackException {
+        jdbcTemplate.update("insert into test (name) values ('foo')");
+        throw new RollbackException();
+    }
+
+
+    @Override
+    @Transactional(rollbackFor = RollbackException.class)
+    public void b() throws RollbackException {
+        a();
+//        ((TestService) (AopContext.currentProxy())).a();
+//        testService.a();
+    }
+
+    //add three solutions of access enhanced agent class
 }

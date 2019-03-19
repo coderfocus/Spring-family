@@ -71,4 +71,16 @@ public class TestServiceImplTest {
             log.info("after rollbackForException: {}",jdbcTemplate.queryForObject("select count(*) from test",Long.class));
         }
     }
+
+
+    @Test
+    public void b(){
+        log.info("before invoke method b: {}",jdbcTemplate.queryForObject("select count(*) from test",Long.class));
+        try{
+            testService.b();
+        }catch (RollbackException e){
+            log.info("after invoke method b: {}",jdbcTemplate.queryForObject("select count(*) from test",Long.class));
+        }
+    }
+
 }
