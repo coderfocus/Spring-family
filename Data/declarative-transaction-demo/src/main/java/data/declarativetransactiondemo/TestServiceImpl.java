@@ -63,7 +63,13 @@ public class TestServiceImpl implements TestService{
         throw new RollbackException();
     }
 
-
+    /**
+    * @Description: three solutions about  how to access enhanced agent class
+    * @Param: []
+    * @return: void
+    * @Author: songwenjie
+    * @Date: 2019/3/19
+    */
     @Override
     @Transactional(rollbackFor = RollbackException.class)
     public void b() throws RollbackException {
@@ -72,5 +78,5 @@ public class TestServiceImpl implements TestService{
 //        testService.a();
     }
 
-    //add three solutions of access enhanced agent class
+
 }
