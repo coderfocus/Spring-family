@@ -19,7 +19,7 @@ public interface BookMapper {
 
     @Select("select * from t_book where id = #{id}")
     @Results({
-            @Result(column = "book_name",property = "bookName")
+//            @Result(column = "book_name",property = "bookName")
     })
     Book findById(long id);
 
