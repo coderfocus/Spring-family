@@ -1,0 +1,19 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="data.mybatis_demo.mapper.BookMapperByXml">
+
+    <resultMap id="bookMap" type="data.mybatis_demo.model.Book">
+        <id property="id" column="id"/>
+        <result property="bookName" column="book_name"/>
+        <result property="author" column="author"/>
+        <result property="price" column="price"/>
+    </resultMap>
+
+    <select id="findById" resultMap="bookMap">
+      select * from t_book where id = #{id}
+    </select>
+
+    <insert id="save">
+        insert into t_book (book_name,author,price) values (#{bookName},#{author},#{price})
+    </insert>
+</mapper>
