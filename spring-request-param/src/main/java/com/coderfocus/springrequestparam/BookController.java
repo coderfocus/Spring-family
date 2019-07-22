@@ -3,6 +3,7 @@ package com.coderfocus.springrequestparam;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -99,6 +100,27 @@ public class BookController {
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("bookName", book.getBookName());
         paramMap.put("bookCode", book.getBookCode());
+        return paramMap;
+    }
+
+    @GetMapping("/getBook8")
+    public Map<String,Object> getBook8(@RequestParam List<String> bookNames){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("bookNames", bookNames);
+        return paramMap;
+    }
+
+    @GetMapping("/getBook9")
+    public Map<String,Object> getBook9(@RequestBody List<Book> books){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("books", books);
+        return paramMap;
+    }
+
+    @PostMapping("/postBook5")
+    public Map<String,Object> postBook5(@RequestBody List<Book> books){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("books", books);
         return paramMap;
     }
 
