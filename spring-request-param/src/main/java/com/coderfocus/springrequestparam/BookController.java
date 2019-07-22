@@ -1,9 +1,6 @@
 package com.coderfocus.springrequestparam;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,6 +46,15 @@ public class BookController {
         paramMap.put("bookCode", book.getBookCode());
         return paramMap;
     }
+
+    @GetMapping("/getBook4/{bookName}")
+    public Map<String,Object> getBook4(@PathVariable String bookName){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("bookName", bookName);
+        return paramMap;
+    }
+
+
 
 
 
