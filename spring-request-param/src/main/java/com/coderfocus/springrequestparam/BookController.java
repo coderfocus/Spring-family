@@ -86,4 +86,21 @@ public class BookController {
     }
 
 
+    @GetMapping("/getBook7/{bookName}/{bookCode}")
+    public Map<String,Object> getBook7(@ModelAttribute Book book){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("bookName", book.getBookName());
+        paramMap.put("bookCode", book.getBookCode());
+        return paramMap;
+    }
+
+    @PostMapping("/postBook4")
+    public Map<String,Object> postBook4(@ModelAttribute Book book){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("bookName", book.getBookName());
+        paramMap.put("bookCode", book.getBookCode());
+        return paramMap;
+    }
+
+
 }
