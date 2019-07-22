@@ -43,7 +43,29 @@ public class BookControllerTest {
     public void testGetBook2() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/book/getBook2")
                 .param("bookName", "martin")
-                .param("bookCode", "123456789")
+//                .param("bookCode", "123456789")
+        )
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andReturn();
+    }
+
+    @Test
+    public void testAddBook() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.post("/book/addBook")
+                        .param("bookName", "martin")
+//                .param("bookCode", "123456789")
+        )
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andReturn();
+    }
+
+    @Test
+    public void testGetBook3() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/book/getBook3")
+                        .param("bookName", "martin")
+//                .param("bookCode", "123456789")
         )
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().isOk())

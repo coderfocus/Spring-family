@@ -20,7 +20,7 @@ public class BookController {
     }
 
     @GetMapping("/getBook2")
-    public Map<String,Object> getBook2(String bookName,int bookCode){
+    public Map<String,Object> getBook2(String bookName,Integer bookCode){
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("bookName", bookName);
         paramMap.put("bookCode", bookCode);
@@ -33,6 +33,24 @@ public class BookController {
         paramMap.put("bookName", bookName);
         return paramMap;
     }
+
+    @PostMapping("/addBook")
+    public Map<String,Object> addBook(Book book){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("bookName", book.getBookName());
+        paramMap.put("bookCode", book.getBookCode());
+        return paramMap;
+    }
+
+    @GetMapping("/getBook3")
+    public Map<String,Object> getBook3(Book book){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("bookName", book.getBookName());
+        paramMap.put("bookCode", book.getBookCode());
+        return paramMap;
+    }
+
+
 
 
 }
