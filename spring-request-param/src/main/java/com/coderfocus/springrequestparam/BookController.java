@@ -70,5 +70,20 @@ public class BookController {
     }
 
 
+    @GetMapping("/getBook6")
+    public Map<String,Object> getBook6(@RequestBody String bookName){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("bookName", bookName);
+        return paramMap;
+    }
+
+    @PostMapping("/postBook3")
+    public Map<String,Object> postBook3(@RequestBody Book book){
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("bookName", book.getBookName());
+        paramMap.put("bookCode", book.getBookCode());
+        return paramMap;
+    }
+
 
 }
