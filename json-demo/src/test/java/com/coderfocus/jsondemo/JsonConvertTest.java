@@ -15,6 +15,7 @@ public class JsonConvertTest {
         user.setName("coder");
         user.setAge(18);
         user.setBirthday(new Date());
+        user.setEmail("coderfocus@qq.com");
         JsonConvert.toJson(user);
     }
 
@@ -64,4 +65,35 @@ public class JsonConvertTest {
         System.out.println(user);
     }
 
+
+    /** 
+    * @Description: 忽略序列化某些字段
+    * @param: []
+    * @return: void 
+    * @Author: songwenjie
+    * @Date: 2019/7/23 
+    */ 
+    @Test
+    public void testObjectToJsonIgnoreEmail() throws Exception {
+        UserWithAnnotation user = new UserWithAnnotation();
+        user.setName("coder");
+        user.setAge(18);
+        user.setBirthday(new Date());
+        user.setEmail("coderfocus@qq.com");
+        JsonConvert.toJson(user);
+    }
+
+    /**
+    * @Description: 忽略反序列化某些字段
+    * @param: []
+    * @return: void
+    * @Author: songwenjie
+    * @Date: 2019/7/23
+    */
+    @Test
+    public void testToUserWithAnnotationIgnoreEmail() throws Exception{
+        String json = "{\"name\":\"小民\",\"age\":20,\"birthday\":844099200000,\"email\":\"xiaomin@sina.com\"}";
+        UserWithAnnotation user = JsonConvert.toUserWithAnnotation(json);
+        System.out.println(user);
+    }
 }

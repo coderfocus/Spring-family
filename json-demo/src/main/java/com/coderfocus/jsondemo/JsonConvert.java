@@ -38,4 +38,20 @@ public class JsonConvert {
         User user = mapper.readValue(json, User.class);
         return user;
     }
+
+    /** 
+    * @Description: 使用注解的反序列化 
+    * @param: [json]
+    * @return: com.coderfocus.jsondemo.UserWithAnnotation 
+    * @Author: songwenjie
+    * @Date: 2019/7/23 
+    */ 
+    public static UserWithAnnotation toUserWithAnnotation(String json) throws IOException, JsonParseException, JsonMappingException {
+        /**
+         * ObjectMapper支持从byte[]、File、InputStream、字符串等数据的JSON反序列化。
+         */
+        ObjectMapper mapper = new ObjectMapper();
+        UserWithAnnotation user = mapper.readValue(json, UserWithAnnotation.class);
+        return user;
+    }
 }
