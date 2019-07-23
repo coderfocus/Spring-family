@@ -67,7 +67,7 @@ public class JsonConvertTest {
 
 
     /** 
-    * @Description: 忽略序列化某些字段
+    * @Description: 忽略序列化某些字段；时间格式化；
     * @param: []
     * @return: void 
     * @Author: songwenjie

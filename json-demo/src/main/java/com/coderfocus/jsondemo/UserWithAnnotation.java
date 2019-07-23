@@ -1,5 +1,6 @@
 package com.coderfocus.jsondemo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Date;
@@ -7,6 +8,8 @@ import java.util.Date;
 public class UserWithAnnotation {
     private String name;
     private Integer age;
+
+    @JsonFormat(pattern = "yyyy年MM月dd日")
     private Date birthday;
 
     @JsonIgnore
