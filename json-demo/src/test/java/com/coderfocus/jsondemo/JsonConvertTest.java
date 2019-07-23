@@ -49,4 +49,19 @@ public class JsonConvertTest {
         map.put("focus",20);
         JsonConvert.toJson(map);
     }
+
+    @Test
+    public void testToUser() throws Exception{
+        String json = "{\"name\":\"小民\",\"age\":20,\"birthday\":844099200000,\"email\":\"xiaomin@sina.com\"}";
+        User user = JsonConvert.toUser(json);
+        System.out.println(user);
+    }
+
+    @Test
+    public void testToUserNoEmail() throws Exception{
+        String json = "{\"name\":\"小民\",\"age\":20,\"birthday\":844099200000}";
+        User user = JsonConvert.toUser(json);
+        System.out.println(user);
+    }
+
 }
