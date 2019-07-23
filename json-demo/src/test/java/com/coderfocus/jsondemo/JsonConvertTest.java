@@ -67,7 +67,7 @@ public class JsonConvertTest {
 
 
     /** 
-    * @Description: 忽略序列化某些字段；时间格式化；
+    * @Description: @Ignore忽略序列化某些字段;@JsonFormat时间格式化;@JsonProperty将属性的名称序列化为另外一个名称
     * @param: []
     * @return: void 
     * @Author: songwenjie
@@ -84,7 +84,7 @@ public class JsonConvertTest {
     }
 
     /**
-    * @Description: 忽略反序列化某些字段
+    * @Description: @Ignore忽略反序列化某些字段;@JsonProperty将属性的名称反序列化为另外一个名称
     * @param: []
     * @return: void
     * @Author: songwenjie
@@ -92,7 +92,7 @@ public class JsonConvertTest {
     */
     @Test
     public void testToUserWithAnnotationIgnoreEmail() throws Exception{
-        String json = "{\"name\":\"小民\",\"age\":20,\"birthday\":844099200000,\"email\":\"xiaomin@sina.com\"}";
+        String json = "{\"userName\":\"小民\",\"age\":20,\"birthday\":844099200000,\"email\":\"xiaomin@sina.com\"}";
         UserWithAnnotation user = JsonConvert.toUserWithAnnotation(json);
         System.out.println(user);
     }
