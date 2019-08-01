@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <hr/>
+    <span>th:text</span>
+    <div>
+        <!--/*@thymesVar id="date" type=""*/-->
+        <span th:text="${date}"></span>
+        <!--/*@thymesVar id="message" type=""*/-->
+        <span th:text="'123,' + ${message}"></span>
+    </div>
+    <hr/>
+
+</body>
+</html>
