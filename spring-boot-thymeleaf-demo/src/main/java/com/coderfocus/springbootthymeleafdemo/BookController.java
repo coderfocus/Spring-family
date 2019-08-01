@@ -5,10 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/book")
@@ -26,6 +23,11 @@ public class BookController {
         users.add(new User("focus","focus@gmail.com"));
         users.add(new User("array","array@gmail.com"));
         model.addAttribute("users",users);
+
+        double id1 = Math.random();
+        double id2 = Math.random();
+        model.addAttribute("id1",id1);
+        model.addAttribute("id2",id2);
 
         return "book";
     }
