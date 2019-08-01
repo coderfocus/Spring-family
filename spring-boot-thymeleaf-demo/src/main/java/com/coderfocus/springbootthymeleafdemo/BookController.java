@@ -35,6 +35,8 @@ public class BookController {
 
         User user = new User("coderfocus","coderfocus@gmail.com");
         model.addAttribute("user",user);
+
+        model.addAttribute("display",false);
         return "book";
     }
 }

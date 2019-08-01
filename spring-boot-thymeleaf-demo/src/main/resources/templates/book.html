@@ -79,5 +79,9 @@
         <div th:text="${email}"></div>
     </div>
 
+    <hr/>
+    <h2>th:style</h2>
+    <h2 th:style="'display:' + (${display}?'none':'block') ">display</h2>
+
 </body>
 </html>
