@@ -83,5 +83,11 @@
     <h2>th:style</h2>
     <h2 th:style="'display:' + (${display}?'none':'block') ">display</h2>
 
+    <hr/>
+    <h2>th:if th:unless</h2>
+    <h2 th:if="${display} == true">display:true</h2>
+    <h2 th:if="${display == true}">display:true</h2>
+    <h2 th:unless="${display} == true">display:false</h2>
+    <h2 th:unless="${display == true}">display:false</h2>
 </body>
 </html>
