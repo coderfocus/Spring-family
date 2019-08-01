@@ -29,6 +29,9 @@ public class BookController {
         model.addAttribute("id1",id1);
         model.addAttribute("id2",id2);
 
+
+        String content = "<h1>coder focus</h2>";
+        model.addAttribute("content",content);
         return "book";
     }
 }
