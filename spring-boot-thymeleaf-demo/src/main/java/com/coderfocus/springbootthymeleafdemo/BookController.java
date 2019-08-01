@@ -32,6 +32,9 @@ public class BookController {
 
         String content = "<h1>coder focus</h2>";
         model.addAttribute("content",content);
+
+        User user = new User("coderfocus","coderfocus@gmail.com");
+        model.addAttribute("user",user);
         return "book";
     }
 }

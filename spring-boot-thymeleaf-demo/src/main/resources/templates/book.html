@@ -6,7 +6,7 @@
 </head>
 <body>
     <hr/>
-    <span>th:text</span>
+    <h2>th:text</h2>
     <div>
         <!--/*@thymesVar id="date" type=""*/-->
         <span th:text="${date}"></span>
@@ -16,7 +16,7 @@
 
 
     <hr/>
-    <span>th:each</span>
+    <h2>th:each</h2>
     <div>
         <li th:each="book : ${books}">
             <!--/*@thymesVar id="book" type=""*/-->
@@ -53,23 +53,31 @@
     </div>
 
     <hr/>
-    <span>th:id</span>
+    <h2>th:id</h2>
     <div>
         <input th:id="${id1}"/>
         <input th:id="${id2}"/>
     </div>
 
     <hr/>
-    <span>th:utext</span>
+    <h2>th:utext</h2>
     <div>
         <p th:utext="${content}"></p>
     </div>
 
     <hr/>
-    <span>th:value</span>
+    <h2>th:value</h2>
     <div>
         <input th:value="${id1}"/>
         <input th:value="${id2}"/>
     </div>
+
+    <hr/>
+    <h2>th:with</h2>
+    <div th:with="name=${user.name},email=${user.email}">
+        <div th:text="${name}"></div>
+        <div th:text="${email}"></div>
+    </div>
+
 </body>
 </html>
