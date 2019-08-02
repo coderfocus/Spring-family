@@ -93,5 +93,22 @@
     <hr/>
     <h2>th:href</h2>
     <a th:href="'http://www.baidu.com'">百度</a>
+
+    <hr/>
+    <h2>th:include</h2>
+    <p>th:include中的参数格式为templatename::[domselector],其中templatename是模板名（如footer）,
+        domselector是可选的dom选择器。如果只写templatename，不写domselector，则会加载整个模板。</p>
+    <p>th:include:保留自己的主标签，不要th:fragment的主标签</p>
+
+    <h4>th:include 加载th:fragment</h4>
+    <div th:include="footer :: copyright"></div>
+    <br/>
+
+    <h4>th:include 加载全部</h4>
+    <div th:insert="footer"></div>
+    <br/>
+
+    <h4>th:include 加载id选择器</h4>
+    <div th:insert="footer::#copy-section"></div>
 </body>
 </html>
