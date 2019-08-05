@@ -200,5 +200,11 @@
     <hr/>
     <h2>th:src</h2>
     <img th:src="@{/images/cloud.jpg}">
+
+    <hr/>
+    <h2>th:selected</h2>
+    <select>
+        <option th:selected="${book} == 'focus'" th:each="book : ${books}" th:text="${book}" th:value="${book}"></option>
+    </select>
 </body>
 </html>
