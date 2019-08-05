@@ -96,7 +96,7 @@
 
     <hr/>
     <h2>th:fragment</h2>
-    <div th:fragment="copyright">
+    <div th:fragment="copyright" id="© 2019 copyright">
         © 2019 copyright
     </div>
 
@@ -105,21 +105,42 @@
     <h2>th:include</h2>
     <p>th:include中的参数格式为templatename::[domselector],其中templatename是模板名（如footer）,
         domselector是可选的dom选择器。如果只写templatename，不写domselector，则会加载整个模板。</p>
-    <p>th:include:保留自己的主标签，不要th:fragment的主标签</p>
+    <p>th:include:保留自己的主标签，不要th:fragment(模板)的主标签</p>
 
     <h4>th:include 加载th:fragment</h4>
     <div th:include="footer :: copyright"></div>
     <br/>
 
     <h4>th:include 只写模板名,加载全部</h4>
-    <div th:insert="footer"></div>
+    <div th:include="footer"></div>
     <br/>
 
     <h4>th:include  只写选择器，这里指fragment名称，则加载本页面对应的fragment</h4>
-    <div th:insert="::copyright"></div>
+    <div th:include="::copyright"></div>
     <br/>
 
     <h4>th:include 加载id选择器</h4>
-    <div th:insert="footer::#copy-section"></div>
+    <div th:include="footer::#copy-section"></div>
+
+
+    <hr/>
+    <h2>th:replace(整体替换)</h2>
+    <p>th:replace:不要自己的主标签，保留th:fragment(模板)的主标签</p>
+
+    <h4>th:replace 加载th:fragment</h4>
+    <div th:replace="footer :: copyright"></div>
+    <br/>
+
+    <h4>th:replace 只写模板名,加载全部</h4>
+    <div th:replace="footer"></div>
+    <br/>
+
+    <h4>th:replace  只写选择器，这里指fragment名称，则加载本页面对应的fragment</h4>
+    <div th:replace="::copyright"></div>
+    <br/>
+
+    <h4>th:replace 加载id选择器</h4>
+    <div th:replace="footer::#copy-section"></div>
+
 </body>
 </html>
