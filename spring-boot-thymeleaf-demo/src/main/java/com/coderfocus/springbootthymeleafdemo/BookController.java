@@ -3,6 +3,7 @@ package com.coderfocus.springbootthymeleafdemo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.*;
@@ -38,5 +39,10 @@ public class BookController {
 
         model.addAttribute("display",false);
         return "book";
+    }
+
+    @PostMapping
+    public String book(User model){
+        return "/success";
     }
 }
