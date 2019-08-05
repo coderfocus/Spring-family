@@ -177,6 +177,21 @@
 
         <input type="submit"/>
     </form>
+    <br/>
+
+    <h4>th:object 访问对象</h4>
+    <h5>通过直接访问对象的方式</h5>
+    <div>
+        <p th:text="${user.name}"></p>
+        <p th:text="${user.email}"></p>
+    </div>
+
+    <h5>通过th:object访问对象的方式</h5>
+    <div th:object="${user}">
+        <p th:text="*{name}"></p>
+        <p th:text="*{email}"></p>
+    </div>
+    <br/>
 
 </body>
 </html>
