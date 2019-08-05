@@ -171,7 +171,7 @@
     <h2>th:object</h2>
 
     <h4>th:object 表单提交</h4>
-    <form id="userForm" action="/book" th:object="${user}" method="post" >
+    <form id="userForm" th:action="@{/book}" th:object="${user}" method="post" >
         <input type="text" th:field="*{name}"/>
         <input type="text" th:field="*{email}"/>
 
@@ -199,6 +199,6 @@
 
     <hr/>
     <h2>th:src</h2>
-    <img src="/images/cloud.jpg">
+    <img th:src="@{/images/cloud.jpg}">
 </body>
 </html>
