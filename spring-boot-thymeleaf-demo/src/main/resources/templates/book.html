@@ -142,5 +142,25 @@
     <h4>th:replace 加载id选择器</h4>
     <div th:replace="footer::#copy-section"></div>
 
+
+    <hr/>
+    <h2>th:insert(整体插入)</h2>
+    <p>th:insert:保留自己的主标签，保留th:fragment的主标签</p>
+
+    <h4>th:insert 加载th:fragment</h4>
+    <div th:insert="footer :: copyright"></div>
+    <br/>
+
+    <h4>th:insert 只写模板名,加载全部</h4>
+    <div th:insert="footer"></div>
+    <br/>
+
+    <h4>th:insert  只写选择器，这里指fragment名称，则加载本页面对应的fragment</h4>
+    <div th:insert="::copyright"></div>
+    <br/>
+
+    <h4>th:insert 加载id选择器</h4>
+    <div th:insert="footer::#copy-section"></div>
+
 </body>
 </html>
