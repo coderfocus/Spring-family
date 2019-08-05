@@ -99,6 +99,10 @@
     <div th:fragment="copyright" id="© 2019 copyright">
         © 2019 copyright
     </div>
+    <h4>th:fragment 传递参数</h4>
+    <div th:include="teamplate :: frag('foo','bar')"></div>
+    <div th:include="teamplate :: frag('bar','foo')"></div>
+    <br/>
 
 
     <hr/>
