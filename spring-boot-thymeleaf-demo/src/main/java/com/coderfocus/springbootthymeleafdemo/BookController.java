@@ -38,7 +38,7 @@ public class BookController {
         model.addAttribute("user",user);
 
         model.addAttribute("display",false);
-        return "book";
+        return "/book";
     }
 
     @PostMapping
