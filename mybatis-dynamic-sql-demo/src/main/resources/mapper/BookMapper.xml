@@ -21,5 +21,22 @@
       </where>
     </select>
 
+    <select id="getBooks2" resultMap="bookMap">
+        select * from t_book
+        <where>
+            <choose>
+                <when test="name!=null">
+                    and book_name = #{name}
+                </when>
+                <when test="price!=null and price != 0">
+                    and price > #{price}
+                </when>
+                <otherwise>
+                    and author = #{author}
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
 
 </mapper>
