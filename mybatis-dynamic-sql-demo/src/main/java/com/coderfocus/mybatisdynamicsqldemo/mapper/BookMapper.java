@@ -8,7 +8,9 @@ import java.util.List;
 
 @Mapper
 public interface BookMapper {
-    List<Book> getBooks(@Param("name") String name,@Param("price")Double price);
+    List<Book> getBooks(@Param("name") String name, @Param("price") Double price);
 
-    List<Book> getBooks2(String name,Double price,String author);
+    List<Book> getBooks2(String name, Double price, String author);
+
+    List<Book> oneParameterWithParam(@Param("book") Book book);
 }

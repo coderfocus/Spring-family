@@ -40,6 +40,16 @@ public class BookMapperTest {
         System.out.println(books.size());
     }
 
+    @Test
+    public void testOneParameterWithParam() {
+        Book book = new Book();
+        book.setName("Java");
+        book.setPrice(10.0);
+        List<Book> books = bookMapper.oneParameterWithParam(book);
+        System.out.println(books.size());
+    }
+
+
 
 
 }
