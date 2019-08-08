@@ -27,7 +27,7 @@ public interface BookMapper {
 
     List<Book> oneMapParameterWithoutParam(Map<String,Object> map);
 
-
+    List<Book> manyMapParameterWithoutParam(String name,Map<String,Object> map);
 
 
 }

@@ -88,6 +88,8 @@
         select * from t_book where book_name = #{name} and price = #{price}
     </select>
 
-
+    <select id="manyMapParameterWithoutParam" resultMap="bookMap">
+        select * from t_book where book_name = #{name} and price = #{map.price}
+    </select>
 
 </mapper>
