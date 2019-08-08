@@ -39,16 +39,24 @@
     </select>
 
     <select id="oneParameterWithParam" resultMap="bookMap">
-    select * from t_book
-    <where>
-        <if test="book.name!=null">
-            and book_name = #{book.name}
-        </if>
-        <if test="book.price!=null and book.price != 0">
-            and price > #{book.price}
-        </if>
-    </where>
-</select>
+        select * from t_book
+        <where>
+            <if test="book.name!=null">
+                and book_name = #{book.name}
+            </if>
+            <if test="book.price!=null and book.price != 0">
+                and price > #{book.price}
+            </if>
+        </where>
+    </select>
 
+    <select id="getBooksByIds" resultMap="bookMap">
+        SELECT * FROM t_book
+        WHERE id in
+        <foreach item="id" index="index" collection="ids"
+                 open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
 
 </mapper>

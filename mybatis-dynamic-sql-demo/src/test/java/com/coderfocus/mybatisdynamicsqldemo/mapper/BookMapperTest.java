@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest
@@ -41,6 +42,14 @@ public class BookMapperTest {
     }
 
     @Test
+    public void testGetBooksByIds() {
+        List<Integer> ids = Arrays.asList(1,2,3);
+        List<Book> books = bookMapper.getBooksByIds(ids);
+        System.out.println(books.size());
+    }
+
+
+    @Test
     public void testOneParameterWithParam() {
         Book book = new Book();
         book.setName("Java");
@@ -48,7 +57,6 @@ public class BookMapperTest {
         List<Book> books = bookMapper.oneParameterWithParam(book);
         System.out.println(books.size());
     }
-
 
 
 
