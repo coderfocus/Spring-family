@@ -58,6 +58,15 @@ public class BookMapperTest {
         System.out.println(books.size());
     }
 
+    @Test
+    public void testOneParameterWithoutParam() {
+        Book book = new Book();
+        book.setName("Java");
+        book.setPrice(10.0);
+        List<Book> books = bookMapper.oneParameterWithoutParam(book);
+        System.out.println(books.size());
+    }
+
 
 
 }

@@ -12,9 +12,10 @@ public interface BookMapper {
 
     List<Book> getBooks2(String name, Double price, String author);
 
-    List<Book> oneParameterWithParam(@Param("book") Book book);
-
     List<Book> getBooksByIds(@Param("ids") List<Integer> ids);
 
+    List<Book> oneParameterWithParam(@Param("book") Book book);
+
+    List<Book> oneParameterWithoutParam(Book book);
 
 }
