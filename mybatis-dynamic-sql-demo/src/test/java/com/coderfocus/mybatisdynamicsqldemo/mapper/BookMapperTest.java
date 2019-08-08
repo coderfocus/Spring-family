@@ -107,4 +107,13 @@ public class BookMapperTest {
         List<Book> books = bookMapper.manyMapParameterWithoutParam("Java",map);
         System.out.println(books.size());
     }
+
+    @Test
+    public void testOneMapParameterWithParam() {
+        Map map = new HashMap();
+        map.put("name","Java");
+        map.put("price",89.0);
+        List<Book> books = bookMapper.oneMapParameterWithParam(map);
+        System.out.println(books.size());
+    }
 }
