@@ -79,4 +79,11 @@
     <select id="manyBaseParameterWithoutParam" resultMap="bookMap">
         select * from t_book where book_name = #{param1} and price = #{param2}
     </select>
+
+    <select id="manyCustomParameterWithoutParam" resultMap="bookMap">
+        select * from t_book where book_name = #{param2} and price = #{param1.price}
+    </select>
+
+
+
 </mapper>

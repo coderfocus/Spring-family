@@ -80,4 +80,12 @@ public class BookMapperTest {
     }
 
 
+    @Test
+    public void testManyCustomParameterWithoutParam() {
+        Book book = new Book();
+        book.setPrice(10.0);
+        List<Book> books = bookMapper.manyCustomParameterWithoutParam(book,"Java");
+        System.out.println(books.size());
+    }
+
 }

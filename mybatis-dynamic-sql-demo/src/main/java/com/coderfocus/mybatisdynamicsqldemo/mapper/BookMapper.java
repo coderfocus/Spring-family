@@ -22,4 +22,6 @@ public interface BookMapper {
 
     List<Book> manyBaseParameterWithoutParam(String name,Double price);
 
+    List<Book> manyCustomParameterWithoutParam(Book book,String name);
+
 }
