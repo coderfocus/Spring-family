@@ -8,7 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -87,5 +89,16 @@ public class BookMapperTest {
         List<Book> books = bookMapper.manyCustomParameterWithoutParam(book,"Java");
         System.out.println(books.size());
     }
+
+
+    @Test
+    public void testOneMapParameterWithoutParam() {
+        Map map = new HashMap();
+        map.put("name","Java");
+        map.put("price",89.0);
+        List<Book> books = bookMapper.oneMapParameterWithoutParam(map);
+        System.out.println(books.size());
+    }
+
 
 }

@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface BookMapper {
@@ -23,5 +24,10 @@ public interface BookMapper {
     List<Book> manyBaseParameterWithoutParam(String name,Double price);
 
     List<Book> manyCustomParameterWithoutParam(Book book,String name);
+
+    List<Book> oneMapParameterWithoutParam(Map<String,Object> map);
+
+
+
 
 }

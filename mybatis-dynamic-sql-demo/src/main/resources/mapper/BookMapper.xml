@@ -84,6 +84,10 @@
         select * from t_book where book_name = #{param2} and price = #{param1.price}
     </select>
 
+    <select id="oneMapParameterWithoutParam" resultMap="bookMap">
+        select * from t_book where book_name = #{name} and price = #{price}
+    </select>
+
 
 
 </mapper>
