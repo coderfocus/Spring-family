@@ -71,6 +71,10 @@
         </where>
     </select>
 
+    <select id="oneBaseParameterWithoutParam" resultMap="bookMap">
+        select * from t_book where book_name = #{###}
+    </select>
+
 
 
 </mapper>

@@ -18,4 +18,7 @@ public interface BookMapper {
 
     List<Book> oneParameterWithoutParam(Book book);
 
+    List<Book> oneBaseParameterWithoutParam(String name);
+
+
 }

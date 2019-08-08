@@ -67,6 +67,9 @@ public class BookMapperTest {
         System.out.println(books.size());
     }
 
-
-
+    @Test
+    public void testOneBaseParameterWithoutParam() {
+        List<Book> books = bookMapper.oneBaseParameterWithoutParam("Java");
+        System.out.println(books.size());
+    }
 }
