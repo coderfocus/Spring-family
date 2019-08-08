@@ -76,5 +76,7 @@
     </select>
 
 
-
+    <select id="manyBaseParameterWithoutParam" resultMap="bookMap">
+        select * from t_book where book_name = #{param1} and price = #{param2}
+    </select>
 </mapper>

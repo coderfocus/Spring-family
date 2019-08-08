@@ -20,5 +20,6 @@ public interface BookMapper {
 
     List<Book> oneBaseParameterWithoutParam(String name);
 
+    List<Book> manyBaseParameterWithoutParam(String name,Double price);
 
 }
