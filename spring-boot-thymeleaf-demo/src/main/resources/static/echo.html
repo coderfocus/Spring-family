@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>echo</title>
+</head>
+<body>
+    <form action="/echo" method="post">
+        姓名(text)：<input type="text" name="name"/><br>
+        邮箱(email)：<input type="email" name="email"/><br>
+
+        性别(radio)：<input type="radio" name="gender" value="男" checked="true"/>男
+             <input type="radio" name="gender" value="女"/>女<br>
+
+        爱好(checkbox)：<input type="checkbox" name="liking" value="打球" checked="true"/>打球
+             <input type="checkbox" name="liking" value="看书"/>看书
+             <input type="checkbox" name="liking" value="健身"/>健身
+             <input type="checkbox" name="liking" value="旅游"/>旅游<br>
+
+        省份(select)：<select name="province">
+                <option value="1">山東省</option>
+                <option value="2">广东省</option>
+                <option value="3">浙江省</option>
+                <option value="4">江苏省</option>
+             </select><br>
+
+        备注(textarea)：<textarea name="remark" cols="20" rows="5">
+             </textarea><br>
+
+        密码(password)：<input type="password" name="password"/><br>
+
+        年龄(number)：<input type="number" name="age" min="1" max="100" step="1"><br>
+        年龄(range)：<input type="range" name="range" min="1" max="100" step="1"><br>
+
+        id(hidden):  <input type="hidden" name="id" value="12"/><br>
+
+        <input type="file" name="file"><br><br>
+
+        <input type="button" value="普通按钮"/>
+        <input type="reset" value="重置按钮"/>
+        <input type="submit" value="提交按钮"/><br><br>
+
+        <input type="text" value="只读文本框" readonly="readonly"><br><br>
+        <input type="button" value="禁用按钮" disabled="disabled"><br><br>
+
+
+    </form>
+</body>
+</html>
