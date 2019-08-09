@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>batchFile</title>
+</head>
+<body>
+    <form action="/file/batch/upload" method="post" enctype="multipart/form-data">
+        id:  <input type="text" name="id"/><br><br>
+        名称: <input type="text" name="name"/><br><br>
+
+        文件1: <input type="file" name="file"/><br><br>
+        文件2: <input type="file" name="file"/><br><br>
+        文件3: <input type="file" name="file"/><br><br>
+
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
