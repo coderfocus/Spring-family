@@ -23,6 +23,8 @@ public class FileConfiguration {
         factory.setMaxFileSize(DataSize.of(2, DataUnit.MEGABYTES));
         //设置总上传数据总大小3M
         factory.setMaxRequestSize(DataSize.of(3, DataUnit.MEGABYTES));
+        //设置文件临时存储路径
+        factory.setLocation("E://me/tmp");
         return factory.createMultipartConfig();
     }
 
