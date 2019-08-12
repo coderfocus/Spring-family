@@ -78,7 +78,7 @@ public class FileController {
                 try {
                     byte[] bytes = file.getBytes();
                     stream = new BufferedOutputStream(new FileOutputStream(
-                            new File(file.getOriginalFilename())));
+                            new File("spring-boot-thymeleaf-demo\\src\\main\\resources\\static\\images\\",file.getOriginalFilename())));
                     stream.write(bytes);
                     stream.close();
                 } catch (Exception e) {
@@ -90,6 +90,37 @@ public class FileController {
             }
         }
         return "上传成功";
+    }
+
+    @RequestMapping(value = "/img/upload", method = RequestMethod.POST)
+    @ResponseBody
+    public String imgUpdate(@RequestParam(value = "file") MultipartFile file) {
+        if (file.isEmpty()) {
+            return "文件不能为空";
+        }
+        // 获取文件名
+        String fileName = file.getOriginalFilename();
+        // 获取文件的后缀名
+        String suffixName = fileName.substring(fileName.lastIndexOf("."));
+        // 文件上传后的路径
+        String filePath = "E://images/";
+        // 解决中文问题，liunx下中文路径，图片显示问题
+        // fileName = UUID.randomUUID() + suffixName;
+        File dest = new File(filePath + fileName);
+        // 检测是否存在目录
+        if (!dest.getParentFile().exists()) {
+            dest.getParentFile().mkdirs();
+        }
+        try {
+            file.transferTo(dest);
+            return "文件成功";
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "文件上传失败";
+
     }
 
 }
