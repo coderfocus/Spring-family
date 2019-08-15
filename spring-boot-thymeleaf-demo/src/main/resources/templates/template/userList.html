@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>userList</title>
+</head>
+<body>
+    <div></div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    $.ajax({
+        url: "/userList/template",
+        type: 'get',
+        success: function (data) {
+            $("div").html(data);
+        }
+
+    })
+</script>
+</html>
