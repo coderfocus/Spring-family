@@ -1,6 +1,7 @@
 package com.coderfocus.servletinspringbootdemo.servlet;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -28,6 +29,9 @@ public class MyServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        ServletContext servletContext = request.getServletContext();
+        servletContext.log("servlet doGet!");
 
         Writer writer = response.getWriter();
         writer.write("<html><body><h3>hello "+ value +", my servlet</h3></body></html>");
