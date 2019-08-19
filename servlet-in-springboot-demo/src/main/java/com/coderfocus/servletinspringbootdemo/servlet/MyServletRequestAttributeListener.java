@@ -17,7 +17,7 @@ public class MyServletRequestAttributeListener implements ServletRequestAttribut
     public void attributeAdded(ServletRequestAttributeEvent srae) {
         HttpServletRequest request = (HttpServletRequest)srae.getServletRequest();
         ServletContext servletContext = request.getServletContext();
-        servletContext.log("servelt attributeAdded { name: " + srae.getName() + " value: "+ srae.getValue() +"}");
+        servletContext.log("serveltRequest attributeAdded { name: " + srae.getName() + " value: "+ srae.getValue() +"}");
     }
 
     /**
@@ -29,7 +29,7 @@ public class MyServletRequestAttributeListener implements ServletRequestAttribut
     public void attributeRemoved(ServletRequestAttributeEvent srae) {
         HttpServletRequest request = (HttpServletRequest)srae.getServletRequest();
         ServletContext servletContext = request.getServletContext();
-        servletContext.log("servelt attributeRemoved { name: " + srae.getName() + " value: "+ srae.getValue() +"}");
+        servletContext.log("serveltRequest attributeRemoved { name: " + srae.getName() + " value: "+ srae.getValue() +"}");
     }
 
     /**
@@ -41,6 +41,6 @@ public class MyServletRequestAttributeListener implements ServletRequestAttribut
     public void attributeReplaced(ServletRequestAttributeEvent srae) {
         HttpServletRequest request = (HttpServletRequest)srae.getServletRequest();
         ServletContext servletContext = request.getServletContext();
-        servletContext.log("servelt attributeReplaced { name: " + srae.getName() + " value: "+ srae.getValue() +"}");
+        servletContext.log("serveltRequest attributeReplaced { name: " + srae.getName() + " value: "+ srae.getValue() +"}");
     }
 }
