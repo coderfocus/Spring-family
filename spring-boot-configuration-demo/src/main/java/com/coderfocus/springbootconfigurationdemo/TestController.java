@@ -1,6 +1,7 @@
 package com.coderfocus.springbootconfigurationdemo;
 
 import com.coderfocus.springbootconfigurationdemo.config.InfoByProperties;
+import com.coderfocus.springbootconfigurationdemo.config.InfoBySourceAndProperties;
 import com.coderfocus.springbootconfigurationdemo.config.InfoBySourceAndValue;
 import com.coderfocus.springbootconfigurationdemo.config.InfoByValue;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class TestController {
 
     @Autowired
     private InfoBySourceAndValue infoBySourceAndValue;
+
+    @Autowired
+    private InfoBySourceAndProperties infoBySourceAndProperties;
 
     /** 
     * @Description: 通过@Value读取自定义配置属性
@@ -45,7 +49,7 @@ public class TestController {
 
 
     /** 
-    * @Description: 通过@PropertySource和@Value读取自定义配置文件的属性 
+    * @Description: 通过@PropertySource和@Value读取自定义配置文件的属性
     * @param: []
     * @return: com.coderfocus.springbootconfigurationdemo.config.InfoBySourceAndValue 
     * @Author: songwenjie
@@ -56,5 +60,16 @@ public class TestController {
         return infoBySourceAndValue;
     }
 
+    /** 
+    * @Description: 通过@PropertySource和@ConfigurationProperties读取自定义配置文件的属性
+    * @param: []
+    * @return: com.coderfocus.springbootconfigurationdemo.config.InfoBySourceAndProperties 
+    * @Author: songwenjie
+    * @Date: 2019/8/20 
+    */ 
+    @GetMapping("/infoBySourceAndProperties")
+    public InfoBySourceAndProperties infoBySourceAndProperties(){
+        return infoBySourceAndProperties;
+    }
 
 }
