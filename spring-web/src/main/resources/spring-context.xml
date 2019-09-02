@@ -4,5 +4,7 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="userDao" class="com.coderfocus.dao.impl.UserDaoImpl"></bean>
+    <bean id="userService" class="com.coderfocus.service.impl.UserServiceImpl"></bean>
 
 </beans>
