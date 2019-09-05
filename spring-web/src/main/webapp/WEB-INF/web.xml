@@ -32,4 +32,14 @@
       <servlet-name>autoUserController</servlet-name>
       <url-pattern>/auto/user</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+      <servlet-name>scopeController</servlet-name>
+      <servlet-class>com.coderfocus.controller.ScopeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>scopeController</servlet-name>
+      <url-pattern>/scope</url-pattern>
+  </servlet-mapping>
+
 </web-app>

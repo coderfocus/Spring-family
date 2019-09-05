@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class AutoUserController extends HttpServlet {
-    ApplicationContext context =  null;
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserService userService = AutoSpringContext.getBean("userService");

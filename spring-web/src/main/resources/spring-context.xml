@@ -9,5 +9,6 @@
     <bean id="userDao" class="com.coderfocus.dao.impl.UserDaoImpl"></bean>
     <bean id="userService" class="com.coderfocus.service.impl.UserServiceImpl"></bean>
 
-
+    <bean id="singletonService" class="com.coderfocus.service.impl.SingletonServiceImpl" scope="singleton"></bean>
+    <bean id="prototypeService" class="com.coderfocus.service.impl.PrototypeServiceImpl" scope="prototype"></bean>
 </beans>
