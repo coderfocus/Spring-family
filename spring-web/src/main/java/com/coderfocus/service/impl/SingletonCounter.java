@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+
 @Component
 public class SingletonCounter {
 
@@ -14,12 +16,14 @@ public class SingletonCounter {
     @Autowired
     private SquareCounter squareCounter1;
 
-    @Qualifier("squareCounter")
-    @Autowired
+//    @Qualifier("squareCounter")
+//    @Autowired
+    @Resource
     private Counter squareCounter;
 
-    @Qualifier("additionCounter")
-    @Autowired
+//    @Qualifier("additionCounter")
+//    @Autowired
+    @Resource
     private Counter additionCounter;
 
     public Integer getCount() {
