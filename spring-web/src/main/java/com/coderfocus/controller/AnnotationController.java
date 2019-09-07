@@ -1,9 +1,8 @@
 package com.coderfocus.controller;
 
 import com.coderfocus.commons.context.AutoSpringContext;
-import com.coderfocus.entity.PrototypeCounter;
-import com.coderfocus.entity.SingletonCounter;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.coderfocus.service.impl.PrototypeCounter;
+import com.coderfocus.service.impl.SingletonCounter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,11 +20,15 @@ public class AnnotationController extends HttpServlet {
         PrototypeCounter prototypeCounter = AutoSpringContext.getBean("prototypeCounter");
         prototypeCounter.setCount(prototypeCounter.getCount()+1);
 
-        Integer squareCount = singletonCounter.square(singletonCounter.getCount());
+        Integer squareCount1 = singletonCounter.square(singletonCounter.getCount());
+        Integer squareCount2 = singletonCounter.squareCount(singletonCounter.getCount());
+        Integer addCount = singletonCounter.addCount(singletonCounter.getCount());
 
         PrintWriter writer =resp.getWriter();
         writer.write("singletonCount: "+ singletonCounter.getCount() + "\n");
         writer.write("prototypeCount: "+ prototypeCounter.getCount() + "\n");
-        writer.write("squareCount: "+ squareCount + "\n");
+        writer.write("squareCount1: "+ squareCount1 + "\n");
+        writer.write("squareCount2: "+ squareCount2 + "\n");
+        writer.write("addCount: "+ addCount + "\n");
     }
 }
