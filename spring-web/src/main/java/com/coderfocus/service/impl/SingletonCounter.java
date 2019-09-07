@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
 @Component
@@ -45,5 +46,10 @@ public class SingletonCounter {
 
     public Integer addCount(Integer count) {
         return additionCounter.calculate(count);
+    }
+
+    @PostConstruct
+    public void setUp(){
+        System.out.println("SingletonCounter setUp!!!");
     }
 }
