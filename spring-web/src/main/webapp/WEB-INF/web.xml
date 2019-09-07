@@ -42,4 +42,14 @@
       <url-pattern>/scope</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+      <servlet-name>annotationController</servlet-name>
+      <servlet-class>com.coderfocus.controller.AnnotationController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>annotationController</servlet-name>
+      <url-pattern>/count</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
