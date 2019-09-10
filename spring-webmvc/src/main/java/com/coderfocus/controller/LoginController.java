@@ -12,7 +12,7 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    @RequestMapping(value = {"","/login"},method = RequestMethod.GET)
     public String login(){
         loginService.login();
         return "login";
